@@ -1,28 +1,55 @@
-let onePoint = document.querySelector("#onePoint");
-let twoPoint = document.querySelector("#twoPoint");
-let threePoint = document.querySelector("threePoint");
+let onePointHome = document.querySelector(".onePointHome");
+let twoPointHome = document.querySelector(".twoPointHome");
+let threePointHome = document.querySelector(".threePointHome");
 let homeTotal = document.querySelector("#homeTotal");
+
+let onePointAway = document.querySelector(".onePointAway");
+let twoPointAway = document.querySelector(".twoPointAway");
+let threePointAway = document.querySelector(".threePointAway");
 let awayTotal = document.querySelector("#awayTotal");
 
-let total = 0;
+let homeRunningScore = 0;
+let awayRunningScore = 0;
 
-onePoint.addEventListener('click', addOne);
-twoPoint.addEventListener('click', addTwo);
-threePoint.addEventListener('click', addThree);
+function playGame() {
 
+onePointHome.addEventListener('click', addOneHome);
+twoPointHome.addEventListener('click', addTwoHome);
+threePointHome.addEventListener('click', addThreeHome);
+onePointAway.addEventListener('click', addOneAway);
+twoPointAway.addEventListener('click', addTwoAway);
+threePointAway.addEventListener('click', addThreeAway);
 
+    function addOneHome() {
+        homeRunningScore += 1;
+        return homeTotal.textContent = homeRunningScore;
+    };
 
-function addOne() {
-    homeTotal += 1;
-    homeTotal.textContent = total;
-}
+    function addTwoHome() {
+        homeRunningScore += 2;
+        return homeTotal.textContent = homeRunningScore;
+    };
 
-function addTwo() {
-    homeTotal += 2;
-    homeTotal.textContent = total;
-}
+    function addThreeHome() {
+        homeRunningScore += 3;
+        return homeTotal.textContent = homeRunningScore;
+    };
 
-function addThree() {
-    homeTotal += 3;
-    homeTotal.textContent = total;
-}
+    function addOneAway() {
+        awayRunningScore += 1;
+        return awayTotal.textContent = awayRunningScore;
+    };
+
+    function addTwoAway() {
+        awayRunningScore += 2;
+        return awayTotal.textContent = awayRunningScore;
+    };
+
+    function addThreeAway() {
+        awayRunningScore += 3;
+        return awayTotal.textContent = awayRunningScore;
+    };
+
+};
+
+playGame()
